@@ -37,12 +37,17 @@ function updateClock() {
         "December",
     ];
 
-    hours = hours % 12 || 12;
+     // hours = hours % 12 || 12;
+    if(hours>12){
+        hours=hours-12 ;
+        period= "PM";
+    }
+    hours = hours < 10 ? "0" + hours : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     date = date < 10 ? "0" + date : date;
 
-    var period = hours < 12 ? "AM" : "PM";
+    // var period = hours < 12 ? "AM" : "PM";
     time.innerHTML = hours + ":" + minutes + ":" + seconds + " " + period;
     dateTime.innerHTML =
     dayNames[day] + ", " + monthNames[month] + " " + date + ", " + year;
