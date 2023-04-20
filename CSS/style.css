@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(45deg, #0a0a0a, #3a4452);
+}
+.clock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    font-size: 120px;
+    font-weight: 500;
+    
+}
+
+.date-time {
+    font-size: 40px;
+    margin-top: 10px;
+}
+.me{
+    font-size: 40px;
+}
+@media screen and (max-width: 768px) {
+    .time {
+        font-size: 70px;
+    }
+}
