@@ -37,10 +37,14 @@ function updateClock() {
         "December",
     ];
 
-     // hours = hours % 12 || 12;
+    // hours = hours % 12 || 12;
+    
     if(hours>12){
         hours=hours-12 ;
         period= "PM";
+    }
+    if(hours ===0){
+        hours = 12;
     }
     hours = hours < 10 ? "0" + hours : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
