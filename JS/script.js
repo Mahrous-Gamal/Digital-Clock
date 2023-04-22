@@ -38,12 +38,12 @@ function updateClock() {
     ];
 
     // hours = hours % 12 || 12;
-    
+    let period;
     if(hours>12){
         hours=hours-12 ;
         period= "PM";
     }
-    if(hours ===0){
+    if(hours === 0){
         hours = 12;
     }
     hours = hours < 10 ? "0" + hours : hours;
@@ -51,7 +51,7 @@ function updateClock() {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     date = date < 10 ? "0" + date : date;
 
-     var period = hours < 12 ? "AM" : "PM";
+    // period = hours < 12 ? "AM" : "PM";
     time.innerHTML = hours + ":" + minutes + ":" + seconds + " " + period;
     dateTime.innerHTML =
     dayNames[day] + ", " + monthNames[month] + " " + date + ", " + year;
