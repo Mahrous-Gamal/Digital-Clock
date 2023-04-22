@@ -43,6 +43,9 @@ function updateClock() {
         hours=hours-12 ;
         period= "PM";
     }
+    else{
+        period= "AM";
+    }
     if(hours === 0){
         hours = 12;
     }
