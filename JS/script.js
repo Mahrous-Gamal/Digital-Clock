@@ -7,7 +7,7 @@ function updateClock() {
     var hours = now.getHours();
     var minutes = now.getMinutes();
     var seconds = now.getSeconds();
-    
+
     var day = now.getDay();
     var date = now.getDate();
     var month = now.getMonth();
@@ -37,27 +37,28 @@ function updateClock() {
         "December",
     ];
 
-    // hours = hours % 12 || 12;
-    let period;
-    if(hours>12){
-        hours=hours-12 ;
-        period= "PM";
-    }
-    else{
-        period= "AM";
-    }
-    if(hours === 0){
-        hours = 12;
-    }
     hours = hours < 10 ? "0" + hours : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     date = date < 10 ? "0" + date : date;
 
-    // period = hours < 12 ? "AM" : "PM";
-    time.innerHTML = hours + ":" + minutes + ":" + seconds + " " + period;
+    let  meridiem = 'AM';
+    if(hours === 0){
+      hours = 12
+      meridiem = 'AM';
+  }
+  else if( hours === 12 ){
+      meridiem = 'PM';
+  }
+  else if( hours > 12){
+    hours = hours - 12
+      meridiem = 'PM';
+  }
+
+
+    time.innerHTML = hours + ":" + minutes + ":" + seconds + " " + meridiem;
     dateTime.innerHTML =
-    dayNames[day] + ", " + monthNames[month] + " " + date + ", " + year;
+        dayNames[day] + ", " + monthNames[month] + " " + date + ", " + year;
 }
 updateClock();
 setInterval(updateClock, 1000);
