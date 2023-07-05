@@ -1,6 +1,8 @@
 var time = document.querySelector(".time");
 var dateTime = document.querySelector(".date-time");
 
+
+// update clock function
 function updateClock() {
     var now = new Date();
 
